@@ -4,6 +4,8 @@ Crear una funcion donde das como String un numero romano y lo convierte a decima
 
 */
 
+//#region MI SOLUCION ORIGINAL
+
 /**
  * Esta funcion se encarga de convertir nuestro numero romano en decimal
  * 
@@ -45,6 +47,51 @@ function romanToInt(s) {
 }
 
 // Ejemplo de uso:
+console.log(romanToInt("III")); // Output: 3
+console.log(romanToInt("IV")); // Output: 4
+console.log(romanToInt("IX")); // Output: 9
+console.log(romanToInt("LVIII")); // Output: 58
+console.log(romanToInt("MCMXCIV")); // Output: 1994
+
+
+//#region SOLUCION HASH TABLE
+/*
+solucion proporcionada por : https://leetcode.com/problems/roman-to-integer/solutions/2706813/js-hash-table-with-exlanation/
+
+
+*/
+let romantoIntHashTable=function(s){
+    let resultado=0;
+
+    //creamos un objeto que contiene el valor de nuestros letras
+    const simbolo={
+        'I':1,
+        'V':5,
+        'X':10,
+        'L':50,
+        'C':100,
+        'D':500,
+        'M':1000
+    }
+
+    for(let i = 0; i < s.length; i++){
+        //asignamos a dos variables una posicion de caracter en nuestro numero romano y le indicamos que pertenecen al objeto simbolo para que sepan su valor
+        const actual=simbolo[s[i]];
+        const siguiente=simbolo[s[i+1]];
+
+        //segun cual de los dos sea más alto nos suma o nos resta, le verdad mas simple que lo mio
+        if(actual<siguiente){
+            resultado+=siguiente-actual;
+            i++;
+        }else{
+            resultado+=actual;
+        }
+    }
+
+    return resultado;
+};
+
+//probar si funciona
 console.log(romanToInt("III")); // Output: 3
 console.log(romanToInt("IV")); // Output: 4
 console.log(romanToInt("IX")); // Output: 9

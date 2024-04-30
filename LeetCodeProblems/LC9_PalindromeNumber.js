@@ -4,6 +4,8 @@ Comprobar si un numero es o no palindromo
 
 */
 
+//#region MI SOLUCION ORIGINAL
+
 /**
  * esta funcion recibe un numero como parametro y debemos indicar si este es un palindromo es decir, se lee igual del derecho que del reves
  * 
@@ -26,3 +28,5 @@ var isPalindrome = function(x) {
 console.log(isPalindrome(41));
 console.log(isPalindrome(757));
 console.log(isPalindrome(3993));
+
+//#region REVERSE ARRAY¿¿¿

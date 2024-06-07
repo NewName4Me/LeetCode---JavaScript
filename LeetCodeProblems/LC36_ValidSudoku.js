@@ -8,7 +8,7 @@ cuadrados de 3x3, para las filas y columnas es sencilla:
     y devuelvo true o false en funcion de este
 ahora solo falta la parte más complicada, meter en un array los 9 grupo de 3
 
-65ms vence al 70%
+47ms vence al 99.55%
 */
 
 /**

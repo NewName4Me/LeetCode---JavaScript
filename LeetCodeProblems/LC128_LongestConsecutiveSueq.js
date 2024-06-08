@@ -14,6 +14,8 @@ acabamos de romper
 por ultimo hay casos donde tenemos por ejemplo 0,1,1,2... para el codigo que hicimos abajo
 el que tengamos un numero repetido en mitad de secuencia nos romperia esta, por tanto hacemos un comprobacion
 al principio de si el numero de delante es igual al actual y en caso de ser así lo saltamos
+
+95ms 87.44%beats
 */
 
 /**

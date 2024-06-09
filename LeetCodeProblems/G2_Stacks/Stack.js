@@ -24,6 +24,18 @@ class Stack {
         return this.items[this.items.length - 1];
     }
 
+    //metodo para obtener el elemento más pequeño del stack
+    getMin() {
+        if (typeof this.items[0] === 'number') {
+            return Math.min(...this.items);
+        }
+
+        this.items.sort();
+
+        return this.items[0];
+
+    }
+
     // Método para verificar si la pila está vacía.
     isEmpty() {
         return this.items.length === 0;

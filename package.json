@@ -1,0 +1,13 @@
+{
+  "name": "javascriptproblems",
+  "version": "1.0.0",
+  "description": "Este repositorio será donde suba problemas varios en javascript con explicación en cada uno de estos.\r Estos problemas probablemente provengan de LeetCode o CodeWars o que encuentre por internet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}

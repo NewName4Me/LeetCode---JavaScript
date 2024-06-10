@@ -1,6 +1,6 @@
 class Stack {
-    constructor() {
-        this.items = []; // Inicializamos un array vacío para almacenar los elementos de la pila.
+    constructor(elements = []) {
+        this.items = Array.isArray(elements) ? elements : []; // Inicializamos un array vacío para almacenar los elementos de la pila.
     }
 
     // Método para agregar un elemento a la pila.

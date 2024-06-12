@@ -15,6 +15,7 @@ Explanation: "amanaplanacanalpanama" is a palindrome.
 
 */
 
+
 //region Solucion 1
 /* 
 Eliminar espacios del texto
@@ -22,17 +23,6 @@ Convertirlo a array
 Usar reverse
 Comparar reverse con original
 */
-
-//region Solucion 2 Pointers
-/* 
-Recorrer usando dos punteros que saltan espacios
-Revertirlo en el recorrido y comparar
-*/
-
-/**
- * @param {string} s
- * @return {boolean}
- */
 var isPalindrome = function (s) {
     let newString = '';
 
@@ -56,9 +46,42 @@ const ejemplo2 = 'a.';
 /* console.log(isPalindrome(ejemplo1));
 console.log(isPalindrome(ejemplo2));
  */
+
+//region Solucion 1 V2 - One Linel
 var isPalindromeV2 = function (s) {
     return s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase() === s.replace(/[^a-zA-Z0-9]/g, '').split("").reverse().join("").toLowerCase("");
 }
 
-console.log(isPalindromeV2(ejemplo1));
-console.log(isPalindromeV2(ejemplo2));
+/* console.log(isPalindromeV2(ejemplo1));
+console.log(isPalindromeV2(ejemplo2)); */
+
+//region Solucion 2 Pointers
+/* 
+Recorrer usando dos punteros que saltan espacios
+Revertirlo en el recorrido y comparar
+*/
+var isPalindromeV3 = function (s) {
+    /* s.toLowerCase().replace(/[^a-zA-Z0-9]/g, ''); */ /* supongamos que esto no lo podemos hacer */
+    let left = 0;
+    let right = s.length - 1;
+
+    while (left < right) {
+        while (left < right && !isLetterOrNumber(s[left])) {
+            left++;
+        }
+        while (right > left && !isLetterOrNumber(s[right])) {
+            right--;
+        }
+
+        if (s[left].toLowerCase() !== s[right].toLowerCase()) {
+            return false;
+        }
+
+        left++;
+        right--;
+    }
+
+    return true;
+}
+console.log(isPalindromeV3(ejemplo1));
+console.log(isPalindromeV3(ejemplo2));

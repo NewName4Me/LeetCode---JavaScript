@@ -53,6 +53,12 @@ function isLetterOrNumber(char) {
 
 const ejemplo1 = 'A man, a plan, a canal: Panama';
 const ejemplo2 = 'a.';
-console.log(isPalindrome(ejemplo1));
+/* console.log(isPalindrome(ejemplo1));
 console.log(isPalindrome(ejemplo2));
+ */
+var isPalindromeV2 = function (s) {
+    return s.replace(/[^a-zA-Z0-9]/g, '').toLowerCase() === s.replace(/[^a-zA-Z0-9]/g, '').split("").reverse().join("").toLowerCase("");
+}
 
+console.log(isPalindromeV2(ejemplo1));
+console.log(isPalindromeV2(ejemplo2));

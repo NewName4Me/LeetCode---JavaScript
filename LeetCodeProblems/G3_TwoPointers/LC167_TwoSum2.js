@@ -30,8 +30,32 @@ var twoSum = function (numbers, target) {
 
 const numb1 = [2, 7, 11, 15];
 const target1 = 9;
-console.log(twoSum(numb1, target1));
-
 const numb2 = [2, 3, 4];
 const target2 = 6;
-console.log(twoSum(numb2, target2));
+const numb3 = [0, 0, 3, 4];
+const target3 = 0;
+
+/* console.log(twoSum(numb1, target1));
+console.log(twoSum(numb2, target2)); */
+//region Solucion Pointers 
+//49 ms beats 88.93%
+function twoSumV2(numbers, target) {
+    let left = 0;
+    let right = numbers.length - 1;
+
+    while (left < right) {
+        const suma = numbers[left] + numbers[right];
+
+        if (suma > target) {
+            right--;
+        } else if (suma < target) {
+            left++;
+        } else {
+            return [left + 1, right + 1];
+        }
+    }
+}
+
+console.log(twoSumV2(numb1, target1));
+console.log(twoSumV2(numb2, target2));
+console.log(twoSumV2(numb3, target3));
